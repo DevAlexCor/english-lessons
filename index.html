@@ -7,7 +7,7 @@
     <meta name="description" content="Бесплатные уроки английского языка для начинающих в VRChat. Каждое воскресенье в 20:00 по Москве.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -15,65 +15,95 @@
             box-sizing: border-box;
         }
         body {
-            font-family: 'Inter', sans-serif;
-            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            font-family: 'Nunito', sans-serif;
+            background: #FF6B52;
             color: #fff;
             min-height: 100vh;
-            line-height: 1.6;
+            line-height: 1.5;
         }
         .container {
-            max-width: 600px;
+            max-width: 500px;
             margin: 0 auto;
-            padding: 24px 16px;
+            padding: 20px 16px;
         }
-        header {
-            text-align: center;
+        /* Header with logo */
+        .header-bar {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 24px;
+        }
+        .logo {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+        }
+        .logo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .header-bar span {
+            font-size: 18px;
+            font-weight: 700;
+            color: #fff;
+        }
+        /* Hero section */
+        .hero {
             margin-bottom: 32px;
         }
-        .badge {
-            display: inline-block;
-            background: #e94560;
-            color: #fff;
-            padding: 6px 16px;
-            border-radius: 20px;
-            font-size: 14px;
-            font-weight: 600;
-            margin-bottom: 16px;
-        }
         h1 {
+            font-size: 36px;
+            font-weight: 900;
+            line-height: 1.1;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        }
+        h1 .line2 {
+            color: #FFE066;
+        }
+        h1 .line3 {
             font-size: 28px;
             font-weight: 700;
-            margin-bottom: 12px;
-            line-height: 1.3;
         }
-        .subtitle {
+        .schedule {
             font-size: 18px;
-            color: #a0aec0;
+            margin-bottom: 8px;
+            opacity: 0.95;
         }
-        .highlight {
-            color: #4fd1c5;
+        .start-date {
+            font-size: 28px;
+            font-weight: 800;
         }
+        /* White cards */
         .card {
-            background: rgba(255, 255, 255, 0.08);
-            border-radius: 16px;
+            background: #fff;
+            border-radius: 20px;
             padding: 20px;
             margin-bottom: 16px;
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: #333;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.1);
         }
         .card-title {
             font-size: 14px;
-            color: #a0aec0;
+            color: #FF6B52;
             text-transform: uppercase;
             letter-spacing: 1px;
-            margin-bottom: 8px;
+            margin-bottom: 6px;
+            font-weight: 800;
         }
         .card-content {
             font-size: 18px;
-            font-weight: 600;
+            font-weight: 700;
+            color: #222;
         }
         .card-content a {
-            color: #4fd1c5;
+            color: #FF6B52;
             text-decoration: none;
         }
         .card-content a:hover {
@@ -81,107 +111,102 @@
         }
         .card-note {
             font-size: 14px;
-            color: #a0aec0;
+            color: #666;
             margin-top: 8px;
         }
-        .cta-section {
-            background: linear-gradient(135deg, #e94560 0%, #c73659 100%);
-            border-radius: 16px;
-            padding: 24px 20px;
-            text-align: center;
-            margin: 24px 0;
-        }
-        .cta-section h2 {
-            font-size: 20px;
-            margin-bottom: 12px;
-        }
-        .cta-section p {
-            font-size: 14px;
-            opacity: 0.9;
-            margin-bottom: 16px;
-        }
-        .btn {
-            display: inline-block;
-            background: #fff;
-            color: #e94560;
-            padding: 14px 28px;
-            border-radius: 30px;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 16px;
-            transition: transform 0.2s, box-shadow 0.2s;
-        }
-        .btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
-        }
+        /* Teacher card */
         .teacher-card {
             display: flex;
             align-items: center;
             gap: 16px;
         }
         .teacher-avatar {
-            width: 64px;
-            height: 64px;
-            background: linear-gradient(135deg, #4fd1c5 0%, #38b2ac 100%);
+            width: 56px;
+            height: 56px;
             border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 28px;
+            overflow: hidden;
             flex-shrink: 0;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+        .teacher-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
         .teacher-info h3 {
             font-size: 18px;
-            margin-bottom: 4px;
+            font-weight: 700;
+            color: #222;
+            margin-bottom: 2px;
         }
         .teacher-info p {
             font-size: 14px;
-            color: #a0aec0;
+            color: #666;
         }
+        .teacher-info a {
+            color: #FF6B52;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 600;
+        }
+        /* Steps */
         .steps {
-            counter-reset: step;
+            margin-top: 12px;
         }
         .step {
             display: flex;
-            gap: 16px;
-            margin-bottom: 16px;
+            gap: 14px;
+            margin-bottom: 14px;
         }
         .step:last-child {
             margin-bottom: 0;
         }
         .step-number {
-            width: 32px;
-            height: 32px;
-            background: #4fd1c5;
-            color: #1a1a2e;
+            width: 28px;
+            height: 28px;
+            background: #FF6B52;
+            color: #fff;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-weight: 700;
+            font-weight: 800;
             font-size: 14px;
             flex-shrink: 0;
         }
         .step-content {
             flex: 1;
+            padding-top: 3px;
         }
         .step-content p {
             font-size: 15px;
+            color: #444;
         }
-        .private-section {
-            background: rgba(79, 209, 197, 0.1);
-            border: 1px solid rgba(79, 209, 197, 0.3);
+        .step-content a {
+            color: #FF6B52;
+            text-decoration: none;
+            font-weight: 600;
         }
+        /* Private lessons card */
+        .private-card {
+            background: linear-gradient(135deg, #FFE066 0%, #FFD93D 100%);
+            color: #333;
+        }
+        .private-card .card-title {
+            color: #666;
+        }
+        .private-card a {
+            color: #d35400;
+        }
+        /* Share section */
         .share-section {
             text-align: center;
             padding: 24px 0;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            margin-top: 24px;
+            margin-top: 8px;
         }
         .share-section p {
-            font-size: 14px;
-            color: #a0aec0;
+            font-size: 15px;
+            opacity: 0.9;
             margin-bottom: 16px;
         }
         .share-buttons {
@@ -190,81 +215,99 @@
             gap: 12px;
         }
         .share-btn {
-            width: 48px;
-            height: 48px;
+            width: 52px;
+            height: 52px;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             text-decoration: none;
-            transition: transform 0.2s, opacity 0.2s;
+            transition: transform 0.2s;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
         }
         .share-btn:hover {
             transform: scale(1.1);
-            opacity: 0.9;
         }
         .share-btn svg {
-            width: 24px;
-            height: 24px;
+            width: 26px;
+            height: 26px;
             fill: #fff;
         }
         .share-telegram { background: #0088cc; }
         .share-vk { background: #4a76a8; }
         .share-discord { background: #5865f2; }
+        /* Decorative elements */
+        .decor-ribbon {
+            position: fixed;
+            top: -50px;
+            right: -50px;
+            width: 200px;
+            height: 200px;
+            background: #FF8A52;
+            border-radius: 50%;
+            opacity: 0.5;
+            pointer-events: none;
+        }
         @media (min-width: 768px) {
-            .container { padding: 48px 24px; }
-            h1 { font-size: 36px; }
-            .subtitle { font-size: 20px; }
+            .container { padding: 40px 24px; }
+            h1 { font-size: 44px; }
+            h1 .line3 { font-size: 34px; }
             .card { padding: 24px; }
-            .card-content { font-size: 20px; }
         }
     </style>
 </head>
 <body>
+    <div class="decor-ribbon"></div>
     <div class="container">
-        <header>
-            <span class="badge">🎮 VRChat</span>
-            <h1>Бесплатные уроки английского для начинающих</h1>
-            <p class="subtitle">Учите английский в <span class="highlight">виртуальной реальности</span></p>
-        </header>
-
-        <div class="card">
-            <div class="card-title">📍 Где проходят уроки?</div>
-            <div class="card-content">VRChat мир <span class="highlight">English Hub</span></div>
+        <!-- Header -->
+        <div class="header-bar">
+            <div class="logo">
+                <img src="eng-rus-logo.png" alt="English-Russian Club" width="40" height="40">
+            </div>
+            <span>English-Russian Club</span>
         </div>
 
-        <div class="card">
-            <div class="card-title">📅 Когда?</div>
-            <div class="card-content">Каждое воскресенье в 20:00 МСК</div>
-            <div class="card-note">Старт — 8 февраля</div>
+        <!-- Hero -->
+        <div class="hero">
+            <h1>
+                Уроки<br>
+                <span class="line2">английского</span><br>
+                <span class="line3">для начинающих</span>
+            </h1>
+            <p class="schedule">Каждое воскресенье, 20:00 МСК</p>
+            <p class="start-date">Старт 8 февраля</p>
         </div>
 
+        <!-- Location -->
         <div class="card">
-            <div class="card-title">💰 Это бесплатно?</div>
+            <div class="card-title">Где проходят уроки?</div>
+            <div class="card-content">VRChat мир English Hub</div>
+        </div>
+
+        <!-- Free -->
+        <div class="card">
+            <div class="card-title">Это бесплатно?</div>
             <div class="card-content">Да, абсолютно бесплатно!</div>
             <div class="card-note">Лучшая поддержка — пригласите друзей, которым интересен английский</div>
         </div>
 
+        <!-- Teacher -->
         <div class="card">
-            <div class="card-title">👨‍🏫 Преподаватель</div>
+            <div class="card-title">Преподаватель</div>
             <div class="teacher-card">
-                <div class="teacher-avatar">🎓</div>
+                <div class="teacher-avatar">
+                    <img src="bolat.png" alt="Boogie_Green">
+                </div>
                 <div class="teacher-info">
                     <h3>Boogie_Green</h3>
-                    <p>Частный преподаватель английского языка</p>
-                    <a href="https://vrchat.com/home/user/usr_c5f1e083-7058-4116-b65f-422e62a4149f" target="_blank" rel="noopener">Профиль VRChat →</a>
+                    <p>Частный преподаватель английского</p>
                 </div>
             </div>
         </div>
 
-        <div class="cta-section">
-            <h2>🚀 Как попасть на урок?</h2>
-            <p>Присоединяйтесь к нашему Discord-серверу</p>
-            <a href="https://discord.gg/4fW5d5dUKa" class="btn" target="_blank" rel="noopener">Присоединиться</a>
-        </div>
-
+        <!-- How to join -->
         <div class="card">
-            <div class="card-title">📋 Инструкция</div>
+            <div class="card-title">Как попасть на урок?</div>
             <div class="steps">
                 <div class="step">
                     <div class="step-number">1</div>
@@ -281,31 +324,33 @@
                 <div class="step">
                     <div class="step-number">3</div>
                     <div class="step-content">
-                        <p>За 15 минут до начала урока мы отправим ссылку-приглашение в Discord</p>
+                        <p>За 15 минут до начала мы отправим ссылку-приглашение в Discord</p>
                     </div>
                 </div>
             </div>
         </div>
 
-        <div class="card private-section">
-            <div class="card-title">🎯 Индивидуальные уроки</div>
+        <!-- Private lessons -->
+        <div class="card private-card">
+            <div class="card-title">Индивидуальные уроки</div>
             <div class="card-content">Хотите заниматься лично с Boogie_Green?</div>
             <div class="card-note" style="margin-top: 12px;">
-                📱 Telegram: <a href="https://t.me/boogie_green" target="_blank" rel="noopener">@boogie_green</a><br>
-                📚 Канал: <a href="https://t.me/bolat_english" target="_blank" rel="noopener">t.me/bolat_english</a>
+                Telegram: <a href="https://t.me/boogie_green" target="_blank" rel="noopener">@boogie_green</a><br>
+                Канал: <a href="https://t.me/bolat_english" target="_blank" rel="noopener">t.me/bolat_english</a>
             </div>
         </div>
 
+        <!-- Share -->
         <div class="share-section">
             <p>Поделитесь с друзьями</p>
             <div class="share-buttons">
-                <a href="https://t.me/share/url?url=&text=Бесплатные уроки английского в VRChat! Каждое воскресенье в 20:00 МСК" class="share-btn share-telegram" target="_blank" rel="noopener" title="Поделиться в Telegram">
+                <a href="https://t.me/share/url?url=&text=Бесплатные уроки английского в VRChat!" class="share-btn share-telegram" target="_blank" rel="noopener" title="Telegram">
                     <svg viewBox="0 0 24 24"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
                 </a>
-                <a href="https://vk.com/share.php?url=&title=Бесплатные уроки английского в VRChat" class="share-btn share-vk" target="_blank" rel="noopener" title="Поделиться в VK">
+                <a href="https://vk.com/share.php?url=&title=Бесплатные уроки английского в VRChat" class="share-btn share-vk" target="_blank" rel="noopener" title="VK">
                     <svg viewBox="0 0 24 24"><path d="M15.684 0H8.316C1.592 0 0 1.592 0 8.316v7.368C0 22.408 1.592 24 8.316 24h7.368C22.408 24 24 22.408 24 15.684V8.316C24 1.592 22.408 0 15.684 0zm3.692 17.123h-1.744c-.66 0-.864-.525-2.05-1.727-1.033-1-1.49-1.135-1.744-1.135-.356 0-.458.102-.458.593v1.575c0 .424-.135.678-1.253.678-1.846 0-3.896-1.118-5.335-3.202C4.624 10.857 4 8.57 4 8.096c0-.254.102-.491.593-.491h1.744c.44 0 .61.203.78.678.847 2.49 2.27 4.675 2.853 4.675.22 0 .322-.102.322-.66V9.721c-.068-1.186-.695-1.287-.695-1.71 0-.203.17-.407.44-.407h2.744c.373 0 .508.203.508.643v3.473c0 .372.17.508.271.508.22 0 .407-.136.813-.542 1.254-1.406 2.151-3.574 2.151-3.574.119-.254.322-.491.763-.491h1.744c.525 0 .644.27.525.643-.22 1.017-2.354 4.031-2.354 4.031-.186.305-.254.44 0 .78.186.254.796.779 1.203 1.253.745.847 1.32 1.558 1.473 2.05.17.49-.085.744-.576.744z"/></svg>
                 </a>
-                <a href="https://discord.gg/4fW5d5dUKa" class="share-btn share-discord" target="_blank" rel="noopener" title="Discord сервер">
+                <a href="https://discord.gg/4fW5d5dUKa" class="share-btn share-discord" target="_blank" rel="noopener" title="Discord">
                     <svg viewBox="0 0 24 24"><path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028 14.09 14.09 0 0 0 1.226-1.994.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z"/></svg>
                 </a>
             </div>
@@ -313,16 +358,12 @@
     </div>
 
     <script>
-        // Update share URLs with current page URL
         document.addEventListener('DOMContentLoaded', function() {
             const pageUrl = encodeURIComponent(window.location.href);
             const shareText = encodeURIComponent('Бесплатные уроки английского в VRChat! Каждое воскресенье в 20:00 МСК');
 
-            const telegramBtn = document.querySelector('.share-telegram');
-            telegramBtn.href = `https://t.me/share/url?url=${pageUrl}&text=${shareText}`;
-
-            const vkBtn = document.querySelector('.share-vk');
-            vkBtn.href = `https://vk.com/share.php?url=${pageUrl}&title=${shareText}`;
+            document.querySelector('.share-telegram').href = `https://t.me/share/url?url=${pageUrl}&text=${shareText}`;
+            document.querySelector('.share-vk').href = `https://vk.com/share.php?url=${pageUrl}&title=${shareText}`;
         });
     </script>
 </body>
