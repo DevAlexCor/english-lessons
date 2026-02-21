@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Как попасть на урок — English-Russian Club</title>
+    <meta name="description" content="Пошаговая инструкция: как найти и присоединиться к группе English-Russian Club в VRChat.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Nunito', sans-serif;
+            background: #FF6B52;
+            color: #fff;
+            min-height: 100vh;
+            line-height: 1.5;
+            position: relative;
+            overflow-x: hidden;
+        }
+        .container {
+            max-width: 750px;
+            margin: 0 auto;
+            padding: 20px 16px;
+        }
+        /* Header with logo */
+        .header-bar {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 24px;
+        }
+        .logo {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+        }
+        .logo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .header-bar span {
+            font-size: 18px;
+            font-weight: 700;
+            color: #fff;
+        }
+        /* Back link */
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            color: #fff;
+            text-decoration: none;
+            font-size: 15px;
+            font-weight: 600;
+            opacity: 0.9;
+            margin-bottom: 20px;
+            transition: opacity 0.2s;
+        }
+        .back-link:hover {
+            opacity: 1;
+        }
+        .back-link svg {
+            width: 18px;
+            height: 18px;
+            fill: #fff;
+        }
+        /* Page title */
+        .page-title {
+            font-size: 32px;
+            font-weight: 900;
+            line-height: 1.1;
+            margin-bottom: 8px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        }
+        .page-title .highlight {
+            color: #FFE066;
+        }
+        .page-subtitle {
+            font-size: 16px;
+            opacity: 0.9;
+            margin-bottom: 28px;
+        }
+        /* Step cards */
+        .step-card {
+            background: #fff;
+            border-radius: 20px;
+            padding: 20px;
+            margin-bottom: 16px;
+            color: #333;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+        }
+        .step-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 12px;
+        }
+        .step-number {
+            width: 32px;
+            height: 32px;
+            background: #FF6B52;
+            color: #fff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            font-size: 16px;
+            flex-shrink: 0;
+        }
+        .step-title {
+            font-size: 17px;
+            font-weight: 700;
+            color: #222;
+        }
+        .step-description {
+            font-size: 15px;
+            color: #555;
+            margin-bottom: 14px;
+            line-height: 1.5;
+        }
+        .step-description a {
+            color: #FF6B52;
+            text-decoration: none;
+            font-weight: 600;
+        }
+        .step-description a:hover {
+            text-decoration: underline;
+        }
+        .step-image {
+            display: block;
+            width: 100%;
+            max-width: 100%;
+            height: auto;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        /* Tip card */
+        .tip-card {
+            background: linear-gradient(135deg, #FFE066 0%, #FFD93D 100%);
+            color: #333;
+            border-radius: 20px;
+            padding: 20px;
+            margin-bottom: 16px;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+        }
+        .tip-card .tip-label {
+            font-size: 14px;
+            color: #666;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 6px;
+            font-weight: 800;
+        }
+        .tip-card p {
+            font-size: 16px;
+            font-weight: 600;
+            color: #333;
+        }
+        .tip-card a {
+            color: #d35400;
+            text-decoration: none;
+            font-weight: 700;
+        }
+        .tip-card a:hover {
+            text-decoration: underline;
+        }
+        /* Section divider */
+        .section-label {
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 800;
+            opacity: 0.8;
+            margin: 28px 0 16px;
+        }
+
+        @media (min-width: 768px) {
+            .container { padding: 40px 24px; }
+            .page-title { font-size: 40px; }
+            .step-card { padding: 24px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="header-bar">
+            <div class="logo">
+                <img src="eng-rus-logo.png" alt="English-Russian Club" width="40" height="40">
+            </div>
+            <span>English-Russian Club</span>
+        </div>
+
+        <!-- Back link -->
+        <a href="index.html" class="back-link">
+            <svg viewBox="0 0 24 24"><path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/></svg>
+            На главную
+        </a>
+
+        <!-- Page title -->
+        <h1 class="page-title">
+            Как попасть<br>
+            <span class="highlight">на урок</span>
+        </h1>
+        <p class="page-subtitle">Пошаговая инструкция для VRChat</p>
+
+        <!-- Part 1: Finding the group -->
+        <p class="section-label">Часть 1 — Найти группу</p>
+
+        <!-- Step 1 -->
+        <div class="step-card">
+            <div class="step-header">
+                <div class="step-number">1</div>
+                <div class="step-title">Откройте меню и нажмите «Groups»</div>
+            </div>
+            <p class="step-description">Зайдите в VRChat, откройте главное меню (Launch Pad) и выберите раздел <strong>Groups</strong>.</p>
+            <img src="instructions/1.png" alt="Меню VRChat — кнопка Groups" class="step-image">
+        </div>
+
+        <!-- Step 2 -->
+        <div class="step-card">
+            <div class="step-header">
+                <div class="step-number">2</div>
+                <div class="step-title">Нажмите на поиск</div>
+            </div>
+            <p class="step-description">В разделе групп нажмите на иконку поиска или кнопку <strong>Find a Group</strong>, чтобы открыть поиск.</p>
+            <img src="instructions/2.png" alt="Explore Groups — поиск" class="step-image">
+        </div>
+
+        <!-- Step 3 -->
+        <div class="step-card">
+            <div class="step-header">
+                <div class="step-number">3</div>
+                <div class="step-title">Откройте строку поиска</div>
+            </div>
+            <p class="step-description">Нажмите на поле <strong>«Enter a search term»</strong>, чтобы начать вводить текст.</p>
+            <img src="instructions/3.png" alt="Строка поиска" class="step-image">
+        </div>
+
+        <!-- Step 4 -->
+        <div class="step-card">
+            <div class="step-header">
+                <div class="step-number">4</div>
+                <div class="step-title">Введите «russian-english club»</div>
+            </div>
+            <p class="step-description">Наберите <strong>russian-english club</strong> в строке поиска и нажмите кнопку отправки.</p>
+            <img src="instructions/4.png" alt="Ввод запроса russian-english club" class="step-image">
+        </div>
+
+        <!-- Step 5 -->
+        <div class="step-card">
+            <div class="step-header">
+                <div class="step-number">5</div>
+                <div class="step-title">Найдите группу в результатах</div>
+            </div>
+            <p class="step-description">В результатах поиска найдите группу <strong>Russian-English Club</strong> с логотипом «Rus-Eng Meetup» и нажмите на неё.</p>
+            <img src="instructions/5.png" alt="Результаты поиска — Russian-English Club" class="step-image">
+        </div>
+
+        <!-- Step 6 -->
+        <div class="step-card">
+            <div class="step-header">
+                <div class="step-number">6</div>
+                <div class="step-title">Вступите в группу</div>
+            </div>
+            <p class="step-description">На странице группы нажмите кнопку <strong>«Join This Group»</strong>, чтобы вступить.</p>
+            <img src="instructions/6.png" alt="Страница группы — Join This Group" class="step-image">
+        </div>
+
+        <!-- Step 7 -->
+        <div class="step-card">
+            <div class="step-header">
+                <div class="step-number">7</div>
+                <div class="step-title">Откройте вкладку «Instances»</div>
+            </div>
+            <p class="step-description">На странице группы Russian-English Club перейдите на вкладку <strong>«Instances»</strong>.</p>
+            <img src="instructions/7.png" alt="Вкладка Instances" class="step-image">
+        </div>
+
+        <!-- Step 8 -->
+        <div class="step-card">
+            <div class="step-header">
+                <div class="step-number">8</div>
+                <div class="step-title">Найдите активный инстанс</div>
+            </div>
+            <p class="step-description">Во время урока здесь появится активный инстанс мира <strong>English Hub</strong>. Нажмите на него.</p>
+            <img src="instructions/8.png" alt="Активный инстанс English Hub" class="step-image">
+        </div>
+
+        <!-- Step 9 -->
+        <div class="step-card">
+            <div class="step-header">
+                <div class="step-number">9</div>
+                <div class="step-title">Нажмите «Join»</div>
+            </div>
+            <p class="step-description">На странице инстанса нажмите кнопку <strong>«Join»</strong>, чтобы зайти в мир и присоединиться к уроку.</p>
+            <img src="instructions/9.png" alt="Кнопка Join для входа в мир" class="step-image">
+        </div>
+
+        <!-- Final tip -->
+        <div class="tip-card">
+            <div class="tip-label">Не забудьте</div>
+            <p>Присоединитесь к нашему <a href="https://discord.gg/4fW5d5dUKa" target="_blank" rel="noopener">Discord-серверу</a> — там мы объявляем о начале уроков и отправляем ссылки-приглашения за 15 минут до начала.</p>
+        </div>
+
+        <!-- Back to main -->
+        <a href="index.html" class="back-link" style="margin-top: 16px; margin-bottom: 32px;">
+            <svg viewBox="0 0 24 24"><path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/></svg>
+            Вернуться на главную
+        </a>
+    </div>
+</body>
+</html>
